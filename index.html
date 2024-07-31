@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Bom de Prato</title>
+    <style>
+        /* importação de fontes: */
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        /* resetando formatação e denifições gerais da página: */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            border: none;
+            text-decoration: none;
+        }
+        html { /* definindo tamanhos, barra de rolagem lateral, e fonte principal */
+            width: 100vw;
+            height: 100vh;
+            font-size: 62.5%;
+            overflow-x: hidden;
+            font-family: "Roboto", sans-serif;
+            }
+        /* definições e estrutura do cabeçalho */
+        header {
+            background-color: #1f1e1f;
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: "Playwrite BE VLG", cursive;
+            position: fixed;
+            /* parte responsável por agrupar o logo e o nome do restaurante: */
+            & .intro { 
+                display: flex;
+                color: #fff;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: center;
+                /* estilizando o nome do restaurante: */
+                & .restNome { 
+                color: #ffffff;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                /* estilizando o logo: */
+                & #logo {
+                    margin: 2%;
+                    width: 80px;
+                    border-radius: 50%;
+                    height: auto;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            /* guia do loyalt geral da página e informações do restaurante */
+            & .guia {
+                font-size: 1.1em;
+                text-transform: uppercase;
+                font-family: "Roboto", sans-serif;
+                & .guia-lista {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    & a {
+                        color: #fff;
+                        margin: 10px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        transition: all 250ms ease-in;
+                        & p {
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                        }
+                        & i {
+                            margin: 5px;
+                        }
+                    }
+                    & a:hover {
+                        background-color: #4444;
+                        border-bottom: 2px solid #ffc506;
+                        color: #ffc506;
+                    }
+                }
+            }
+            }
+        }
+        /* definindo estilização, background, ajuste de posição e orientações inicias da página */
+        section {
+            color: #020202;
+            & .cont-principal {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(29,29,29,0.8),rgba(29,29,29,0.8)) ,url(fundo.jpeg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: 130px;
+                & h1 {
+                    color: #ffc506;
+                    font-size: 3rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-bottom: 1rem;
+                }
+                & h2 {
+                    color: #fff;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-bottom: 2rem;
+                }
+                & .btn {
+                    width: 420px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                & .btn button {
+                    width: 190px;
+                    height: 60px;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    background-color: #ffc506;
+                    border-radius: 10px;
+                    color: black;
+                    font-weight: 700px;
+                    margin-top: 5rem;
+                    transition: all 400ms ease-in;
+                }
+                & .btn button:hover {
+                    border: 1px solid #ffc506;
+                    background-color: transparent;
+                    color: #ffc506;
+                }
+            }
+        }
+        #intervalo {
+            background-color: #1f1e1f;
+            width: 100%;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="intro">
+            <div class="restNome">
+                <img src="logo.jpeg" alt="" id="logo">
+                <h1>Restaurante Bom de Prato</h1>
+            </div>
+            <nav class="guia">
+                <ul class="guia-lista">
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Ínicio</p><i class="bi bi-house"></i></a></li>
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Contato</p><i class="bi bi-telephone"></i></a></li>
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Localização</p><i class="bi bi-geo-alt"></i></a></li>
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Whatsapp</p><i class="bi bi-whatsapp"></i></a></li>
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Instagram</p><i class="bi bi-instagram"></i></a></li>
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Carrinho</p><i class="bi bi-cart"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="primeira-section">
+        <div class="cont-principal">
+            <h1>Venha provar a comida mais deliciosa da região!</h1>
+            <h2>Um sabor inesquecível!</h2>
+            <div class="btn">
+                <button .class="irComida">Escolha o seu prato.</button>
+                <button .class="montarComida">Veja as sobremesas.</button>
+            </div>
+        </div>
+    </section>
+    <div id="intervalo">
+    </div>
+    <section class="cardapio" id="cardapio">
+        <h2>Conheça o nosso Cardápio</h2>
+        <div class="itens-cardp">
+            <div class="feijoada">
+                <img src="feijoada.jpeg" alt="feijoada">
+                <div class="info">
+                    <h3>Feijoada</h3>
+                    <h5>
+                        Um clássico brasileiro, a feijoada é um prato à base de feijão-preto, carnes defumadas (como linguiça, bacon e costelinha) e acompanhamentos como arroz, couve e farofa.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="acaraje">
+                <img src="acaraje.jpeg" alt="acaraje">
+                <div class="info">
+                    <h3>Acarajé</h3>
+                    <h5>
+                        Originário da Bahia, o acarajé é um bolinho de feijão-fradinho frito no azeite de dendê e recheado com vatapá, camarão seco e pimenta.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="Moqueca">
+                <img src="moqueca.jpeg" alt="Moqueca">
+                <div class="info">
+                    <h3>Moqueca</h3>
+                    <h5>
+                        Típica da região Nordeste, especialmente da Bahia e do Espírito Santo, a moqueca é um ensopado de peixe ou frutos do mar com leite de coco, dendê, pimentões e temperos.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="pao-de-queijo">
+                <img src="paodequejio.jpeg" alt="Pão de Queijo">
+                <div class="info">
+                    <h3>Pão de Queijo</h3>
+                    <h5>
+                        Popular em Minas Gerais, o pão de queijo é uma delícia feita com polvilho azedo, queijo e ovos. É perfeito para acompanhar um cafezinho.
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="coxinha">
+                <img src="coxinha.jpeg" alt="coxinha">
+                <div class="info">
+                    <h3>Coxinha</h3>
+                    <h5>
+                        Essa iguaria é uma massa de batata recheada com frango desfiado, empanada e frita. É um salgado muito apreciado em todo o país.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="bobo-de-camarao">
+                <img src="" alt="Bobô de Camarão">
+                <div class="info">
+                    <h3>Bobô de Camarão</h3>
+                    <h5>
+                        Prato típico da culinária baiana, o bobó é feito com camarões, mandioca, leite de coco e temperos.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="tapioca">
+                <img src="" alt="tapioca">
+                <div class="info">
+                    <h3>Tapioca</h3>
+                    <h5>
+                        Originária do Norte e Nordeste, a tapioca é uma espécie de panqueca feita com goma de mandioca e recheada com queijo, coco, carne-seca ou outros ingredientes.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="baiao-de-dois">
+                <img src="baiaodedois.jpeg" alt="Baião de Dois">
+                <div class="info">
+                    <h3>Baião de Dois</h3>
+                    <h5>
+                        Esse prato nordestino combina arroz, feijão-verde, carne-seca, queijo coalho e temperos. Uma explosão de sabores!
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="pamonha">
+                <img src="pamonha.jpeg" alt="Pamonha">
+                <div class="info">
+                    <h3>Pamonha</h3>
+                    <h5>
+                        Feita com milho verde, a pamonha pode ser doce ou salgada. É cozida e envolta em folhas de milho.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="vatapa">
+                <img src="" alt="Vatapá">
+                <div class="info">
+                    <h3>Vatapá</h3>
+                    <h5>
+                        Outra especialidade baiana, o vatapá é um creme à base de pão, camarões, amendoim, leite de coco e azeite de dendê.
+                    </h5>
+                    <h4>Porção individual<span>R$35,00</span></h4>
+                    <h4>Porção Dupla<span>R$55,00</span>
+                    <h4>Porção Família<span>R$80,00</span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
