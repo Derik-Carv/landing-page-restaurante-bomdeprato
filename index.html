@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Bom de Prato</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div class="intro">
+            <div class="menuMob">
+                <i class="bi bi-list"></i>
+                <div class="um"></div>
+                <div class="dois"></div>
+                <div class="tres"></div>
+            </div>
+            <div class="restNome">
+                <img src="logo.jpeg" alt="" id="logo">
+                <h1>Restaurante Bom de Prato</h1>
+            </div>
+            <nav class="guia">
+                <ul class="guia-lista">
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Ínicio</p><i class="bi bi-house"></i></a></li>
+                    <li class="item-Guia"><a href="#contatos" class="linkGuia"><p>Contato</p><i class="bi bi-telephone"></i></a></li>
+                    <ul id="ulCar">
+                        <button><li class="item-Guia"><a href="#2" class="linkGuia" id="abrirCar"><p>Carrinho</p><i class="bi bi-cart"></i></a></li></button>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="primeira-section">
+        <div class="cont-principal">
+            <h1>Venha provar a comida mais deliciosa da região!</h1>
+            <h2>Um sabor inesquecível!</h2>
+            <div class="btn">
+                <a href="#cardapio"><button .class="irComida">Escolha o seu prato.</button></a>
+                <a href="#sobremesasEbebidas"><button .class="irSobremesa">Sobremesas e bebidas.</button></a>
+            </div>
+        </div>
+    </section>
+    <div id="intervalo">
+    </div>
+    <section class="cardapio" id="cardapio">
+        <h2>Conheça o nosso Cardápio</h2>
+        <div class="itens-cardapio">
+            <div class="feijoada">
+                <img src="feijoada.jpeg" alt="feijoada">
+                <div class="info">
+                    <h3>Feijoada</h3>
+                    <h5>Um clássico brasileiro, a feijoada é um prato à base de feijão-preto, carnes defumadas (como linguiça, bacon e costelinha) e acompanhamentos como arroz, couve e farofa.</h5>
+                    <h4>Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual" class="check"></span></h4>
+                    <h4>Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4>Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="acaraje">
+                <img src="acaraje.jpeg" alt="acaraje">
+                <div class="info">
+                    <h3>Acarajé</h3>
+                    <h5>Originário da Bahia, o acarajé é um bolinho de feijão-fradinho frito no azeite de dendê e recheado com vatapá, camarão seco e pimenta.</h5>
+                    <h4 for="individual">Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual" class="check"></span></h4>
+                    <h4 for="dupla">Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4 for="familia">Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="Moqueca">
+                <img src="moqueca.jpeg" alt="Moqueca">
+                <div class="info">
+                    <h3>Moqueca</h3>
+                    <h5>Típica da região Nordeste, especialmente da Bahia e do Espírito Santo, a moqueca é um ensopado de peixe ou frutos do mar com leite de coco, dendê, pimentões e temperos.</h5>
+                    <h4>Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual" class="check"></span></h4>
+                    <h4>Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4>Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="pao-de-queijo">
+                <img src="paodequejio.jpeg" alt="Pão de Queijo">
+                <div class="info">
+                    <h3>Pão de Queijo</h3>
+                    <h5>Popular em Minas Gerais, o pão de queijo é uma delícia feita com polvilho azedo, queijo e ovos. É perfeito para acompanhar um cafezinho.</h5>
+                    <h4>Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual" class="check"></span></h4>
+                    <h4>Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4>Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="coxinha">
+                <img src="coxinha.jpeg" alt="coxinha">
+                <div class="info">
+                    <h3>Coxinha</h3>
+                    <h5>Essa iguaria é uma massa de batata recheada com frango desfiado, empanada e frita. É um salgado muito apreciado em todo o país.</h5>
+                    <h4>Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual" class="check"></span></h4>
+                    <h4>Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4>Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="bobo-de-camarao">
+                <img src="bobodecamarao.jpeg" alt="Bobô de Camarão">
+                <div class="info">
+                    <h3>Bobô de Camarão</h3>
+                    <h5>Prato típico da culinária baiana, o bobó é feito com camarões, mandioca, leite de coco e temperos.</h5>
+                    <h4>Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual"class="check"></span></h4>
+                    <h4>Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4>Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="baiao-de-dois">
+                <img src="baiaodedois.jpeg" alt="Baião de Dois">
+                <div class="info">
+                    <h3>Baião de Dois</h3>
+                    <h5>Esse prato nordestino combina arroz, feijão-verde, carne-seca, queijo coalho e temperos. Uma explosão de sabores!</h5>
+                    <h4>Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual" class="check"></span></h4>
+                    <h4>Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4>Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="pamonha">
+                <img src="pamonha.jpeg" alt="Pamonha">
+                <div class="info">
+                    <h3>Pamonha</h3>
+                    <h5>Feita com milho verde, a pamonha pode ser doce ou salgada. É cozida e envolta em folhas de milho.</h5>
+                    <h4>Porção individual<span>R$35,00<input type="checkbox" name="individual" id="individual" class="check"></span></h4>
+                    <h4>Porção Dupla<span>R$55,00<input type="checkbox" name="dupla" id="dupla"></span></h4>
+                    <h4>Porção Família<span>R$80,00<input type="checkbox" name="familia" id="familia"></span></h4>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+        </div>
+    <section class="contatos" id="contatos">
+        <h3>Contatos</h3>
+        <div class="contatos-sessao">
+            <a href=""><span>Localização</span><i class="bi bi-geo-alt"></i></a>
+            <a href=""><span>Whatsapp</span><i class="bi bi-whatsapp"></i></a>
+            <a href=""><span>Instagram</span><i class="bi bi-instagram"></i></a>
+        </div>
+    </section>
+    <footer>
+        <h4>Desenvolvido por -> <a href="https://github.com/Derik-Carv" target="_blank">Derik-Carv<i class="bi bi-github"></i></a></h4>
+    </footer>
+    <script src="script.js"> </script>
+</body>
+</html>
