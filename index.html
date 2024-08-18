@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Bom de Prato</title>
+</head>
+
+<body>
+    <header id="cabecalho">
+        <div class="intro">
+            <div class="restNome">
+                <img src="src/pictures/logo.jpeg" alt="" id="logo">
+                <h1>Restaurante Bom de Prato</h1>
+            </div>
+            <button><span class="menuMob" id="buttonMob" class="open">☰</span></button>
+            <nav class="guia">
+                <ul class="guia-lista">
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Ínicio</p><i class="bi bi-house"></i></a></li>
+                    <li class="item-Guia"><a href="#contatos" class="linkGuia"><p>Contato</p><i class="bi bi-telephone"></i></a></li>
+                    <ul id="ulCar">
+                        <button class="fimCar"><li class="item-Guia"><p>Seu Carrinho</p><i class="bi bi-cart"></i></li></button>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="modalMenu" id="modalMenu">
+        <div class="janelaMenu">
+            <ul class="guiaModal">
+                <li class="item-Guia"><a href="#" class="linkGuia"><p>Ínicio</p><i class="bi bi-house"></i></a></li>
+                <li class="item-Guia"><a href="#contatos" class="linkGuia"><p>Contato</p><i class="bi bi-telephone"></i></a></li>
+                <ul id="ulCar">
+                    <button class="fimCar"><li class="item-Guia"><p>Seu Carrinho</p><i class="bi bi-cart"></i></li></button>
+                </ul>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="janela">
+            <div>
+                <div class="opcpag">
+                <span><input type="checkbox" class="pix" name="pix" id="pix">Pix<i class="bi bi-coin"></i></span>
+                <span><input type="checkbox" class="cartaocred" name="cartaocred" id="cartaocred">Cartão de Crédito<i class="bi bi-credit-card"></i></span>
+                <span><input type="checkbox" class="cartaodeb" name="cartaodeb" id="cartaodeb">Cartão de Débito<i class="bi bi-credit-card-2-back-fill"></i></span>
+                <label for="nomecompleto">Nome Completo:</label>
+                <input type="text" name="nomecompleto" id="nomecompleto" class="nomecompleto">
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="endereco" id="endereco" class="endereco">
+                <button class="buttonconfirmardados">Confirma Dados</button>
+            </div>
+            <div class="confirmardados">
+                    <span>Confirmando seus dados::</span>
+                    <div class="confirmardadosclient"></div>
+            </div>
+        </div>
+            <span id="closeModal" class="close">&times;</span>
+        </div>
+    </div>
+    <section class="primeira-section">
+        <div class="cont-principal">
+            <h1>Venha provar a comida mais deliciosa da região!</h1>
+            <h2>Um sabor inesquecível!</h2>
+            <div class="btn">
+                <a href="#cardapio"><button .class="irComida">Escolha o seu prato.</button></a>
+                <a href="#sobremesasebebidas"><button .class="irSobremesa">Sobremesas e bebidas.</button></a>
+            </div>
+        </div>
+    </section>
+    <div class="cabecalhoMob">
+        <nav class="guia">
+                <ul class="guia-lista">
+                    <span id="closeModalMob" class="close">❌</span>
+                    <li class="item-Guia"><a href="#" class="linkGuia"><p>Ínicio</p><i class="bi bi-house"></i></a></li>
+                    <li class="item-Guia"><a href="#contatos" class="linkGuia"><p>Contato</p><i class="bi bi-telephone"></i></a></li>
+                    <ul id="ulCar">
+                        <button class="fimCar"><li class="item-Guia"><p>Seu Carrinho</p><i class="bi bi-cart"></i></li></button>
+                </ul>
+            </ul>
+        </nav>
+    </div>
+    <div id="intervalo">
+    </div>
+    <section class="cardapio" id="cardapio">
+        <h2>Conheça o nosso Cardápio</h2>
+        <div class="itens-cardapio">
+            <div class="feijoada">
+                <img src="src/pictures/feijoada.jpeg" alt="feijoada">
+                <div class="info">
+                    <h3>Feijoada</h3>
+                    <h5>Um clássico brasileiro, a feijoada é um prato à base de feijão-preto, carnes defumadas (como
+                        linguiça, bacon e costelinha) e acompanhamentos como arroz, couve e farofa.</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label id="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input for="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label id="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input for="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label id="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="acaraje">
+                <img src="src/pictures/acaraje.jpeg" alt="acaraje">
+                <div class="info">
+                    <h3>Acarajé</h3>
+                    <h5>Originário da Bahia, o acarajé é um bolinho de feijão-fradinho frito no azeite de dendê e
+                        recheado com vatapá, camarão seco e pimenta.</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label for="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label for="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="Moqueca">
+                <img src="src/pictures/moqueca.jpeg" alt="Moqueca">
+                <div class="info">
+                    <h3>Moqueca</h3>
+                    <h5>Típica da região Nordeste, especialmente da Bahia e do Espírito Santo, a moqueca é um ensopado
+                        de peixe ou frutos do mar com leite de coco, dendê, pimentões e temperos.</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label for="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label for="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="submit" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="pao-de-queijo">
+                <img src="src/pictures/paodequejio.jpeg" alt="Pão de Queijo">
+                <div class="info">
+                    <h3>Pão de Queijo</h3>
+                    <h5>Popular em Minas Gerais, o pão de queijo é uma delícia feita com polvilho azedo, queijo e ovos.
+                        É perfeito para acompanhar um cafezinho.</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label for="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label for="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="coxinha">
+                <img src="src/pictures/coxinha.jpeg" alt="coxinha">
+                <div class="info">
+                    <h3>Coxinha</h3>
+                    <h5>Essa iguaria é uma massa de batata recheada com frango desfiado, empanada e frita. É um salgado
+                        muito apreciado em todo o país.</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label for="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label for="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="bobo-de-camarao">
+                <img src="src/pictures/bobodecamarao.jpeg" alt="Bobô de Camarão">
+                <div class="info">
+                    <h3>Bobô de Camarão</h3>
+                    <h5>Prato típico da culinária baiana, o bobó é feito com camarões, mandioca, leite de coco e
+                        temperos.</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label for="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label for="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="baiao-de-dois">
+                <img src="src/pictures/baiaodedois.jpeg" alt="Baião de Dois">
+                <div class="info">
+                    <h3>Baião de Dois</h3>
+                    <h5>Esse prato nordestino combina arroz, feijão-verde, carne-seca, queijo coalho e temperos. Uma
+                        explosão de sabores!</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label for="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label for="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+            <div class="pamonha">
+                <img src="src/pictures/pamonha.jpeg" alt="Pamonha">
+                <div class="info">
+                    <h3>Pamonha</h3>
+                    <h5>Feita com milho verde, a pamonha pode ser doce ou salgada. É cozida e envolta em folhas de
+                        milho.</h5>
+                        <ul class="porcao">
+                            <li>
+                                <h4>Porção individual</h4>
+                                <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                            </li>
+                            <li>
+                                <h4>Porção Dupla</h4>
+                                <label for="qtd_dupla" class="valor">R$55,00</label>
+                                <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                            </li>
+                            <li>
+                                <h4>Porção Família</h4>
+                                <label for="qtd_familia" class="valor">R$80,00</label>
+                                <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                            </li>
+                        </ul>
+                    <button type="button" class="pedir">Pedir Agora</button>
+                </div>
+            </div>
+        </div>
+        <div id="intervalo">
+        </div>
+        <section class="cardapio" id="sobremesasebebidas">
+            <h2>Saboreie nossas bebidas e sobremesas.</h2>
+            <div class="itens-cardapio">
+                <div class="refrigerantecola">
+                    <img src="src/pictures/cola.jpg" alt="refrigerante cola">
+                    <div class="info">
+                        <h3>Refrigerante Cola</h3>
+                        <h5>Um delicioso e gelado refrigerante sabor cola.</h5>
+                            <ul class="porcao">
+                                <li>
+                                    <h4>Porção individual</h4>
+                                    <label id="qtd_individual" class="valor">R$ 35,00</label>
+                                    <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                    <input for="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                                </li>
+                                <li>
+                                    <h4>Porção Dupla</h4>
+                                    <label id="qtd_dupla" class="valor">R$55,00</label>
+                                    <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                    <input for="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                                </li>
+                                <li>
+                                    <h4>Porção Família</h4>
+                                    <label id="qtd_familia" class="valor">R$80,00</label>
+                                    <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                    <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                                </li>
+                            </ul>
+                        <button type="button" class="pedir">Pedir Agora</button>
+                    </div>
+                </div>
+                <div class="sucogoiaba">
+                    <img src="src/pictures/goiaba.jpg" alt="suco de goiaba">
+                    <div class="info">
+                        <h3>Suco de Goiaba</h3>
+                        <h5>Um bom suco de goiaba, geladoe natural.</h5>
+                            <ul class="porcao">
+                                <li>
+                                    <h4>Porção individual</h4>
+                                    <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                    <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                    <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                                </li>
+                                <li>
+                                    <h4>Porção Dupla</h4>
+                                    <label for="qtd_dupla" class="valor">R$55,00</label>
+                                    <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                    <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                                </li>
+                                <li>
+                                    <h4>Porção Família</h4>
+                                    <label for="qtd_familia" class="valor">R$80,00</label>
+                                    <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                    <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                                </li>
+                            </ul>
+                        <button type="button" class="pedir">Pedir Agora</button>
+                    </div>
+                </div>
+                <div class="laranja">
+                    <img src="src/pictures/laranja.jpg" alt="suco de laranja">
+                    <div class="info">
+                        <h3>Suco de Laranja</h3>
+                        <h5>Um suco de laranja natural, delicioso.</h5>
+                            <ul class="porcao">
+                                <li>
+                                    <h4>Porção individual</h4>
+                                    <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                    <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                    <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                                </li>
+                                <li>
+                                    <h4>Porção Dupla</h4>
+                                    <label for="qtd_dupla" class="valor">R$55,00</label>
+                                    <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                    <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                                </li>
+                                <li>
+                                    <h4>Porção Família</h4>
+                                    <label for="qtd_familia" class="valor">R$80,00</label>
+                                    <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                    <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                                </li>
+                            </ul>
+                        <button type="submit" class="pedir">Pedir Agora</button>
+                    </div>
+                </div>
+                <div class="abacaxi">
+                    <img src="src/pictures/abacaxi.jpg" alt="suco de abacaxi">
+                    <div class="info">
+                        <h3>Suco de Abacaxi</h3>
+                        <h5>Um belo suco de abacaxi para refrescar.</h5>
+                            <ul class="porcao">
+                                <li>
+                                    <h4>Porção individual</h4>
+                                    <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                    <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                    <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                                </li>
+                                <li>
+                                    <h4>Porção Dupla</h4>
+                                    <label for="qtd_dupla" class="valor">R$55,00</label>
+                                    <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                    <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                                </li>
+                                <li>
+                                    <h4>Porção Família</h4>
+                                    <label for="qtd_familia" class="valor">R$80,00</label>
+                                    <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                    <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                                </li>
+                            </ul>
+                        <button type="button" class="pedir">Pedir Agora</button>
+                    </div>
+                </div>
+                <div class="batatafrita">
+                    <img src="src/pictures/batatafrita.jpg" alt="batata frita">
+                    <div class="info">
+                        <h3>Batata Frita</h3>
+                        <h5>Uma bela bata frita saborosa.</h5>
+                            <ul class="porcao">
+                                <li>
+                                    <h4>Porção individual</h4>
+                                    <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                    <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                    <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                                </li>
+                                <li>
+                                    <h4>Porção Dupla</h4>
+                                    <label for="qtd_dupla" class="valor">R$55,00</label>
+                                    <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                    <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                                </li>
+                                <li>
+                                    <h4>Porção Família</h4>
+                                    <label for="qtd_familia" class="valor">R$80,00</label>
+                                    <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                    <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                                </li>
+                            </ul>
+                        <button type="button" class="pedir">Pedir Agora</button>
+                    </div>
+                </div>
+                <div class="pipoca">
+                    <img src="src/pictures/pipoca.jpg" alt="pipoca">
+                    <div class="info">
+                        <h3>Pipoca</h3>
+                        <h5>Pipoca quentinha, com aquela mantega derretida qeu faz a diferença.</h5>
+                            <ul class="porcao">
+                                <li>
+                                    <h4>Porção individual</h4>
+                                    <label for="qtd_individual" class="valor">R$ 35,00</label>
+                                    <input type="number" id="qtd_individual" name="quantidade_individual" value="0" min="1" max="100"/>
+                                    <input or="qtd_individual" type="checkbox" name="individual" id="qtd_individual">
+                                </li>
+                                <li>
+                                    <h4>Porção Dupla</h4>
+                                    <label for="qtd_dupla" class="valor">R$55,00</label>
+                                    <input type="number" id="qtd_dupla" name="quantidade_dupla" value="0" min="1" max="100"/>
+                                    <input or="qtd_dupla" type="checkbox" name="dupla" id="qtd_dupla">
+                                </li>
+                                <li>
+                                    <h4>Porção Família</h4>
+                                    <label for="qtd_familia" class="valor">R$80,00</label>
+                                    <input type="number" id="qtd_familia" name="quantidade_familia" value="0" min="1" max="100"/>
+                                    <input for="qtd_familia" type="checkbox" name="familia" id="qtd_familia">
+                                </li>
+                            </ul>
+                        <button type="button" class="pedir">Pedir Agora</button>
+                    </div>
+                </div>
+            </div>
+        <section class="contatos" id="contatos">
+            <h3>Contatos</h3>
+            <div class="contatos-sessao">
+                <a href=""><span>Localização</span><i class="bi bi-geo-alt"></i></a>
+                <a href=""><span>Whatsapp</span><i class="bi bi-whatsapp"></i></a>
+                <a href=""><span>Instagram</span><i class="bi bi-instagram"></i></a>
+            </div>
+        </section>
+        <footer>
+            <h4>Desenvolvido por -> <a href="https://github.com/Derik-Carv" target="_blank">Derik-Carv<i class="bi bi-github"></i></a></h4>
+        </footer>
+        <script src="src/js/script.js"> </script>
+
+</body>
+
+</html>

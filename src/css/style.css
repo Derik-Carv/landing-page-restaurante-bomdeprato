@@ -1,0 +1,645 @@
+/* importação de fontes: */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* resetando formatação e denifições gerais da página: */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+}
+html { /* definindo tamanhos, barra de rolagem lateral, e fonte principal */
+    width: 100vw;
+    height: 100vh;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
+}   
+/* definições e estrutura do cabeçalho */
+header {
+    background-color: #1f1e1f;
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Playwrite BE VLG", cursive;
+    position: fixed;
+    /* parte responsável por agrupar o logo e o nome do restaurante: */
+    & .intro { 
+        display: flex;
+        color: #fff;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* estilizando o nome do restaurante: */
+        & button {
+            background-color: #ffffff00;
+        }
+            & .restNome { 
+            color: #ffffff;
+            width: 400px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            /* estilizando o logo: */
+                & #logo {
+                margin: 2%;
+                width: 80px;;    
+                border-radius: 50%;
+                height: auto;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                }
+            }     
+    }
+    /* guia do loyalt geral da página e informações do restaurante */
+    & .guia {
+        font-size: 1.1em;
+        text-transform: uppercase;
+        font-family: "Roboto", sans-serif;
+        & .guia-lista {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            & a {
+                color: #fff;
+                margin: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                transition: all 250ms ease-in;
+                & p {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+                & i {
+                    margin: 5px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+            }
+            & a:hover {
+                background-color: #4444;
+                border-bottom: 2px solid #ffc506;
+                color: #ffc506;
+            }
+                & #ulCar {
+                    display: flex;
+                    align-items: center;
+                    & button {
+                        width: 150px;
+                        background-color: #44444405;
+                        color: white;
+                        margin: 10px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        transition: all 250ms ease-in;
+                    }
+                    & button:hover {
+                        background-color: #4444;
+                        border-bottom: 2px solid #ffc506;
+                        color: #ffc506;
+                        cursor: pointer
+                    }
+                    & a {
+                        color: #fff;
+                        margin: 10px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        transition: all 250ms ease-in;
+                        & label {
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                        }
+                        & i {
+                            margin: 5px;
+                        }
+                    }
+                    & a:hover {
+                        background-color: #4444;
+                        border-bottom: 2px solid #ffc506;
+                        color: #ffc506;
+                        cursor: pointer
+                    }
+                    & #abrirCar:hover {
+                        background-color: #1f1e1f;
+                        color: #ffc506;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        transition: 450ms ease;
+                        & #liCar {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menuMob {
+        margin-top: 5px;
+        width: 20px;
+        background-color: #ffffff34;
+        display: none;
+        scale: 200%;
+        cursor: pointer;
+    }
+    .cabecalhoMob {
+        display: none;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 900;
+        background-color: rgba(0, 0, 0, 0.5);
+        & .guia {
+            a {
+              color: white;  
+            }
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            & .guia-lista {
+                a {
+                    color: white;  
+                  }
+                margin-top: 40px;
+                & .close {
+                    font-size: 30px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 40px;
+                }
+                .close:hover,
+                .close:focus {
+                    color: #000;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                & .item-Guia {
+                    text-align: center;
+                    scale: 300%;
+                    margin-bottom: 80px;
+                }
+                & ul {
+                    & .fimCar {
+                        border-radius: 20%;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        & .item-Guia {
+                            & i .bi .bicart {
+                                color: white
+                            }
+                        }
+                    }
+                    p {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .modalMenu {
+        display: none; /* Escondido por padrão */
+        position: fixed; /* Fica fixo na tela */
+        z-index: 500; /* Certifica-se de que está acima de outros elementos */
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Permite rolagem se o conteúdo for maior que a tela */
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+        list-style: none;
+        text-decoration: none;
+        & .janelaMenu {
+            scale: 300%;
+            align-items: center;
+            text-align: center;
+            margin: 15% auto; /* Centraliza verticalmente com uma margem superior */
+            padding: 20px;
+            width: 100%; /* Largura da janela modal */
+            max-width: 500px; /* Largura máxima da janela modal */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra da janela */
+            & .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+        & button {
+            cursor: pointer;
+        }
+    }
+    .modal {
+        display: none; /* Escondido por padrão */
+        position: fixed; /* Fica fixo na tela */
+        z-index: 1000; /* Certifica-se de que está acima de outros elementos */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Permite rolagem se o conteúdo for maior que a tela */
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+        & .janela {
+            scale: 150%;
+            background-color: #fff;
+            margin: 15% auto; /* Centraliza verticalmente com uma margem superior */
+            padding: 20px;
+            border: 5px solid #ffc506;
+            width: 80%; /* Largura da janela modal */
+            max-width: 500px; /* Largura máxima da janela modal */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra da janela */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & input {
+                background-color: #4444;
+                border: 1px solid black;
+                color: black;
+            }
+            & .opcpag {
+                display: flex;
+                flex-direction: column;
+            }
+            & .confirmardados {
+                display: none;
+            } 
+                & .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                .close:hover,
+                .close:focus {
+                    color: #000;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                & li {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    & .button-pagar {
+                        margin-top: 10px;
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                    
+                    & .button-pagar:hover {
+                        background-color: #45a049;
+                    }
+                }
+        }
+        & button {
+            cursor: pointer;
+        }
+    }
+    /* Para exibir a modal */
+    .modal.active {
+        display: block;
+    }
+
+/* definindo estilização, background, ajuste de posição e orientações inicias da página */
+section {
+    color: #020202;
+    & .cont-principal {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(29,29,29,0.8),rgba(29,29,29,0.8)) ,url(/src/pictures/fundo.jpeg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 130px;
+        & h1 {
+            color: #ffc506;
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        & h2 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        & .btn {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        & .btn button {
+            width: 190px;
+            height: 60px;
+            cursor: pointer;
+            text-transform: uppercase;
+            background-color: #ffc506;
+            border-radius: 10px;
+            color: black;
+            font-weight: 700px;
+            margin-top: 5rem;
+            transition: all 400ms ease-in;
+        }
+        & .btn button:hover {
+            border: 1px solid #ffc506;
+            background-color: transparent;
+            color: #ffc506;
+        }
+    }
+}
+#intervalo {
+    background-color: #1f1e1f;
+    width: 100%;
+    height: 10px;
+}
+.cardapio {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(12,12,12,0.8);
+    & h2 {
+        font-size: 5rem;
+        color: #e6e6e6;
+        text-transform: uppercase;
+
+    }
+    .itens-cardapio {
+        width: 80%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 550px));
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        & div {
+            background-color: rgba(29,29,29,0.8);
+            box-shadow: 0px 0px 4px 1px;
+        }
+        & .info {
+            background-color: rgb(221,221,221);
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+            & h3 {
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+                text-decoration: underline;
+            }
+            h5 {
+                font-size: 1rem;
+                color: #585858;
+                margin-left: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            & .porcao {
+                    width: 100px;
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                & li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center ;
+                    & label {
+                        width: 70px;
+                        font-size: 1.6rem;
+                        color: #585858;
+                        margin-left: 1.5rem;
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 5%;
+                    }
+                    & input {
+                        cursor: pointer;
+                        margin-top: 5%;
+                        width: 36px;
+                        border-radius: 10%;
+                        border: 1px solid black;
+                        text-align: end;
+                    }
+                    & input#qtd:hover {
+                        border: 1px solid black;
+                        outline: 2px solid #ffc506;
+                    }  
+                }           
+            }
+            .pedir {
+                width: 200px;
+                height: 35px;
+                margin-top: 0.5rem;
+                background-color: #ffc506;
+                border-radius: 5px;
+                text-transform: uppercase;
+                cursor: pointer;
+                color: black;
+                transition: all 200ms ease-in;
+            }
+            .pedir:hover {
+                background-color: rgba(12,12,12,0.8);
+                color: #fff;
+            }
+        }
+        & img {
+            width: 70%;
+            height: 270px;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+    }
+}
+.contatos {
+    width: 100%;
+    background-color: #1f1e1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: #fff;
+    padding-bottom: 6rem;
+    & h3 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+    }
+    & .contatos-sessao {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.8rem;
+        & a {
+            color: #fff;
+            cursor: pointer;
+            transition: all 200ms ease-in;
+            & i {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        & a:hover {
+            color: #ffc506;
+        }
+    }
+}
+footer {
+    width: 100%;
+    height: 25px;
+    background-color: black;
+    color: white;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & a {
+        color: white;
+        & i {
+            margin-left: 5px;
+        }
+    }
+}
+@media (max-width: 954px) {
+    header {
+        width: 100%;
+        &.restNome {
+            width: auto;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
+        #ulCar button {
+            top: none;
+        }
+    }
+    section {
+        & .cont-principal {
+            & h1 {
+                margin-top: 350px;
+                font-size: 2rem;
+            }
+        }
+        & h2 {
+            padding: 2%;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 772px) {
+    #cabecalho {
+        width: auto;
+    }
+    .cont-principal {
+        background-color: #1f1e1f;
+    }
+    #ulCar button {
+        height: 72%;
+    }
+    .guia-lista {
+        & .item-Guia {
+            margin-right: 10px;
+        }
+    }
+}
+@media (max-wodth: 673px) {
+    .menuMob {
+        display: none;
+    }
+}
+@media (max-width: 672px) {
+    #cabecalho {
+        width: 100%;
+    }
+    .menuMob {
+        display: block;
+        margin-left: 15px;
+    }
+    .guia {
+        display: none;
+    }
+}
+@media (max-width: 476px) {
+    header {
+        height: 190px;
+        & .intro {
+            margin-top: 20px;
+            & .restNome {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+        & .guia {
+            display: none;
+        }
+    }
+    section {
+        & h1 {
+            margin-top: 120px;
+        }
+        .btn {
+        flex-direction: column;
+        align-items: center;
+        width: 190px;
+        }
+    }
+    .cardapio {
+        & h2 {
+            font-size: 3rem;
+        }
+    }
+    .contatos {
+        padding-bottom: 2rem;
+        & h3 {
+            font-size: 4rem;
+            margin: 1rem;
+        }
+    }
+    .contatos-sessao {
+        flex-direction: column;
+        align-items: center;
+        & a {
+            margin-top: 10px;
+        }
+    }
+    
+}
