@@ -1,3 +1,22 @@
+let ButtonMenuMobileView = document.querySelector(`button .menuMob`) // button para abrir menu mobile
+ButtonMenuMobileView.addEventListener('click', () => { // evento de click e function
+    let menuMobileView = document.querySelector('.cabecalhoMob')  // pega o button pra abrir o menu mobile
+    menuMobileView.style.display = 'block' // deixa visivel o menu mobile
+    let closeMenuMob = menuMobileView.querySelector(`.close`) // button para fechar menu mobile
+    closeMenuMob.addEventListener('click', () => { // evento click e function
+        document.querySelector(`.cabecalhoMob`).style.display = 'none'  // fecha visualização do menu mobile
+    })
+    for (let goTo = 0; goTo<menuMobileView.querySelectorAll('li .linkGuia').length; goTo++) { // pega toda a class do menu de navegação
+        menuMobileView.querySelectorAll('li .linkGuia')[goTo].addEventListener('click', () =>{
+            document.querySelector(`.cabecalhoMob`).style.display = 'none'  // fecha visualização do menu mobile
+        })
+    }
+    let abrirModalMob = menuMobileView.querySelector('#ulCar .fimCar') // chama function click para abrir modal itens
+    abrirModalMob.addEventListener('click', () =>{
+        finalizarCompra() // chama modal vizualização do carrinho e pagamento
+        document.querySelector(`.cabecalhoMob`).style.display = 'none'  // fecha visualização do menu mobile
+    })
+})
 let btnConfirmar = document.querySelector('.fimCar');  // declara a região que vai aparecer as infos rapidas do carrinho
 btnConfirmar.addEventListener('click', finalizarCompra); // chama o o modal de revisão de itens e pagamento
 function finalizarCompra() { // function de chamar vizualização de itens e ingressar no pagamento
@@ -20,7 +39,7 @@ function finalizarCompra() { // function de chamar vizualização de itens e ing
         let metodoPagamento = selectedPag[0].nextSibling.textContent.trim(); // pega o texto do checkbox de pagamento
         let nomeCompleto = modal.querySelector('.nomecompleto').value; // pega o nome completo do cliente
         let endereco = modal.querySelector('.endereco').value; // pega o enderenço preenchido
-        let confirmardadosclient = modal.querySelector('li'); // introduz o texto na li criada na linha 113
+        let confirmardadosclient = modal.querySelector('li'); // introduz o texto na li criada na linha 132
         confirmardadosclient.innerHTML =    `CONFIRME SEUS DADOS: <br>
                                             A sua forma de pagamento é <strong>${metodoPagamento}</strong>, 
                                             seu nome completo é <strong>${nomeCompleto}</strong>, 

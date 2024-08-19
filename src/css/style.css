@@ -168,7 +168,7 @@ header {
         background-color: rgba(0, 0, 0, 0.5);
         & .guia {
             a {
-              color: white;  
+                color: white;  
             }
             margin-top: 100px;
             display: flex;
@@ -176,7 +176,7 @@ header {
             & .guia-lista {
                 a {
                     color: white;  
-                  }
+                }
                 margin-top: 40px;
                 & .close {
                     font-size: 30px;
@@ -574,6 +574,7 @@ footer {
     }
     #ulCar button {
         height: 72%;
+        cursor: pointer;
     }
     .guia-lista {
         & .item-Guia {
